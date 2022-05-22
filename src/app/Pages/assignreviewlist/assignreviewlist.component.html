@@ -1,0 +1,41 @@
+<div class="content">
+    <app-sidebar></app-sidebar>
+    <section>
+        <h2 class="pt-4 px-4">Assigned Review</h2>
+    </section>
+
+    <div class="container-fluid px-4 pt-2 pb-2">
+
+        <!-- Search form -->
+        <div *ngFor="let item of data">
+            <div class="row g-3 my-2">
+                <div class="col-md-12">
+                    <div class="p-4 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
+                            <a href="">
+                                <p class="mb-0 text-dark">Trainee : {{item.trainee.name}}</p>
+                            </a>
+                        </div>
+                        <a href="">
+                            <p class="mb-0 text-dark">Reviewer : {{item.reviewer.name}}</p>
+                        </a>
+                        <div class="center">
+                            <a href=""><i class="fa-solid fa-pen-to-square text-dark"></i></a>
+                        </div>
+                        <div class="right">
+                            <a href=""><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <app-pagination></app-pagination>    
+
+    <!-- Footer Start -->
+    <app-footer></app-footer>
+    <!-- Footer End -->
+</div>
+    

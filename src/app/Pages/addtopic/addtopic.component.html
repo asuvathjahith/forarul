@@ -1,0 +1,59 @@
+<div class="content">
+    <app-sidebar></app-sidebar>
+    <div class="Bread pt-1 px-1">
+
+        <body>
+            <!-- Breadcrums Start -->
+            <div style="margin:20px;">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="headhome.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item ">
+                            <a href="COOR-Courselist.html">Course List</a>
+                        </li>
+                        <li class="breadcrumb-item ">
+                            <a href="">CourseView</a>
+                        </li>
+                        <li class="breadcrumb-item active">Add Topic</li>
+                    </ol>
+                </nav>
+            </div>
+        </body>
+    </div>
+    <div class="container-fluid p-4">
+        <form action="" #ngForm (ngSubmit)="OnSubmit()">
+            <div class="form-floating mb-4">
+                <h4 class="text-black pb-2">Create Topic</h4>
+                <div class="form-floating mb-4">
+                    <input type="text" class="form-control" id="floatingText" name="name" [(ngModel)]="topic.name" />
+                    <label for="floatingText">Topic Name</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="text" class="form-control" id="floatingText" name="duration"
+                        [(ngModel)]="topic.duration" />
+                    <label for="floatingInput">Duration</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="text" class="form-control" id="floatingText" name="content"
+                        [(ngModel)]="topic.content" />
+                    <label for="floatingInput">Content</label>
+                </div>
+                <select class="form-select form-select-lg mb-5" area-label="default select example" 
+                name="departmentId" [(ngModel)]="topic.CourseId">
+                    <option value="course" disable selected>
+                        Course
+                    </option>
+                    <option *ngFor= "let c of course" value="{{topic.CourseId}}">
+                        {{c.name}}
+                    </option>
+                </select>
+                <a href=""><button type="submit" class="btn btn-dark pe-4 px-4">Add</button></a>
+
+                <!-- <a href=""><button type="submit" class="btn btn-dark pe-4 px-4">Add Topic</button></a> -->
+            </div>
+        </form>
+        <app-footer></app-footer>
+    </div>
+</div>
